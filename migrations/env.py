@@ -6,7 +6,8 @@ from alembic import context
 
 
 import sys
-sys.path = ['', '..'] + sys.path[1:]
+
+sys.path = ['', '..'] + sys.path[0:]
 from worker.db_helper import url as db_url
 from worker.db_helper import engine
 from worker.base import Base
