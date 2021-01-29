@@ -1,4 +1,4 @@
-# cbot-cm-trunks-consumer
+# cbot-cm-trunks-consumer-megafon
 
 Данный сервис-бот "слушает" очередь RabbitMQ на предмет сообщений содержащих информацию о транках, и записывает эти данные в БД
 
