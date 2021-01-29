@@ -1,8 +1,8 @@
-"""add obj, phone-str, add atrr
+"""First commit
 
-Revision ID: fe8537f62d5b
+Revision ID: 658c66ee7ecb
 Revises: 
-Create Date: 2021-01-28 21:21:34.490404
+Create Date: 2021-01-29 21:43:41.090988
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'fe8537f62d5b'
+revision = '658c66ee7ecb'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -25,7 +25,10 @@ def upgrade():
     sa.Column('trunk_username', sa.String(length=20), nullable=True),
     sa.Column('trunk_password', sa.String(length=20), nullable=True),
     sa.Column('phone', sa.String(length=20), nullable=True),
+    sa.Column('active', sa.Boolean(), nullable=True),
     sa.Column('attributes', sa.JSON(), nullable=True),
+    sa.Column('lines', sa.Integer(), nullable=True),
+    sa.Column('updated', sa.DateTime(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

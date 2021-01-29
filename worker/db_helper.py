@@ -10,4 +10,3 @@ url = URL(drivername=DB_DRIVER, username=DB_USER, password=DB_PASS, host=DB_HOST
 engine = create_engine(url, echo=True)
 
 Session = sessionmaker(bind=engine)
-
