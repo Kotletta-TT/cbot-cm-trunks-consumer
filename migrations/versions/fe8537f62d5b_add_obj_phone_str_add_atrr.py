@@ -1,8 +1,8 @@
-"""first, create SimVats model
+"""add obj, phone-str, add atrr
 
-Revision ID: 4d47d5775659
+Revision ID: fe8537f62d5b
 Revises: 
-Create Date: 2021-01-28 01:15:23.463727
+Create Date: 2021-01-28 21:21:34.490404
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '4d47d5775659'
+revision = 'fe8537f62d5b'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -21,9 +21,11 @@ def upgrade():
     op.create_table('vats',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('provider', sa.String(length=20), nullable=True),
-    sa.Column('contract', sa.String(length=30), nullable=True),
-    sa.Column('trank_login', sa.String(length=20), nullable=True),
-    sa.Column('phone', sa.BigInteger(), nullable=True),
+    sa.Column('obj', sa.String(length=30), nullable=True),
+    sa.Column('trunk_username', sa.String(length=20), nullable=True),
+    sa.Column('trunk_password', sa.String(length=20), nullable=True),
+    sa.Column('phone', sa.String(length=20), nullable=True),
+    sa.Column('attributes', sa.JSON(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###

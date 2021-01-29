@@ -1,19 +1,24 @@
-from sqlalchemy import Column, Integer, String, BigInteger
+from sqlalchemy import Column, Integer, String, BigInteger, JSON
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
 
-class SimVats(Base):
+class Trunk(Base):
     __tablename__ = 'vats'
     id = Column(Integer, primary_key=True)
     provider = Column(String(20))
-    contract = Column(String(30))
-    trank_login = Column(String(20))
-    phone = Column(BigInteger)
+    obj = Column(String(30))
+    trunk_username = Column(String(20))
+    trunk_password = Column(String(20))
+    phone = Column(String(20))
+    attributes = Column(JSON)
 
-    def __init__(self, provider, contract, trank_login, phone):
+    def __init__(self, provider, obj, trunk_username, trunk_password, phone, active, attributes=None):
         self.provider = provider
-        self.contract = contract
-        self.trank_login = trank_login
+        self.obj = obj
+        self.trunk_username = trunk_username
+        self.trunk_password = trunk_password
         self.phone = phone
+        self.active = active
+        self.attributes = attributes
