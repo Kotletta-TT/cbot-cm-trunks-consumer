@@ -1,8 +1,8 @@
-"""First commit
+"""add Trunk model
 
-Revision ID: 658c66ee7ecb
-Revises: 
-Create Date: 2021-01-29 21:43:41.090988
+Revision ID: b69ccb56cc05
+Revises: bfd6981693c4
+Create Date: 2021-02-05 16:50:28.250675
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '658c66ee7ecb'
-down_revision = None
+revision = 'b69ccb56cc05'
+down_revision = 'bfd6981693c4'
 branch_labels = None
 depends_on = None
 

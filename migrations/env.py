@@ -7,10 +7,10 @@ from alembic import context
 
 import sys
 
-sys.path = ['', '..'] + sys.path[0:]
-from worker.db_helper import url as db_url
-from worker.db_helper import engine
-from worker.base import Base
+sys.path = ['', '..'] + sys.path[1:]
+from db.db_helper import url as db_url
+from db.db_helper import engine
+from base import Base
 
 
 # this is the Alembic Config object, which provides

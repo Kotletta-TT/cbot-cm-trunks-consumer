@@ -3,10 +3,10 @@ import pika
 import sys
 import os
 import json
-from log_init import log_on
-from models import Trunk
-from db_helper import Session
-from config import RABBIT_HOST, RABBIT_PORT, RABBIT_QUEUE, LOG_NAME
+from app.log_init import log_on
+from models.models import Trunk
+from db.db_helper import Session
+from config.conf import RABBIT_HOST, RABBIT_PORT, RABBIT_QUEUE, LOG_NAME
 
 """# Как то ускорить работу с БД (множественный коммит?)"""
 """# Защита от падения/отсутствия коннекта с БД"""
@@ -26,6 +26,7 @@ def init_read_db():
 
 
 def main():
+    temp_db = init_read_db()
     while True:
         try:
             connection = pika.BlockingConnection(pika.ConnectionParameters(host=RABBIT_HOST, port=RABBIT_PORT))
@@ -62,8 +63,7 @@ def main():
     channel.start_consuming()
 
 
-if __name__ == '__main__':
-    temp_db = init_read_db()
+def app_run():
     try:
         main()
     except KeyboardInterrupt:

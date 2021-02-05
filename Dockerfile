@@ -8,4 +8,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 RUN ["alembic", "upgrade", "head"]
-CMD ["python", "worker/main.py"]
+CMD ["python", "./main.py"]
